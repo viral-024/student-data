@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,15 +5,15 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Student Data Dashboard</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- SheetJS (xlsx) CDN -->
+
+    <!-- SheetJS (xlsx) -->
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-    <!-- EmailJS SDK -->
+    <!-- EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
-      (function () {
-        // Replace with your EmailJS public key
-        emailjs.init("ECd6WqdgS-YdP-66S");
-      })();
+      // Initialize EmailJS (replace with your public key)
+
+      emailjs.init("ECd6WqdgS-YdP-66S");
     </script>
   </head>
   <body>
@@ -50,6 +49,16 @@
             <option value="">All Interests</option>
           </select>
 
+          <label class="rows-label"
+            >Rows:
+            <select id="rows-per-page">
+              <option value="5">5</option>
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+            </select>
+          </label>
+
           <button id="export-csv">Export CSV</button>
           <button id="send-email">Send Email</button>
         </div>
@@ -68,11 +77,18 @@
         </table>
       </section>
 
+      <section class="pagination">
+        <button id="prev-btn">Previous</button>
+        <span id="page-info">Page 0 of 0</span>
+        <button id="next-btn">Next</button>
+      </section>
+
       <section class="footer-note">
         <small
           >Tip: Select rows using checkboxes to send personalized emails or
           export selected rows.</small
         >
+        <div id="status" aria-live="polite"></div>
       </section>
     </main>
 
