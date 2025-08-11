@@ -230,8 +230,6 @@ function sendEmailViaEmailJS() {
     return;
   }
 
-  // Initialize EmailJS (replace with your real user/public key)
-  emailjs.init("ECd6WqdgS-YdP-66S");
 
   // Send emails one-by-one
   selectedEmails.forEach((email) => {
@@ -257,3 +255,4 @@ function toggleSelectAll(e) {
     .querySelectorAll(".row-checkbox")
     .forEach((cb) => (cb.checked = checked));
 }
+
