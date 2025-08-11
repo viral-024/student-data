@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Student Data Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- SheetJS (xlsx) CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Student Data Dashboard</h1>
+    </header>
+
+    <main>
+      <section class="controls">
+        <div class="left">
+          <label class="file-label">
+            Upload Excel / CSV
+            <input id="file-input" type="file" accept=".xlsx,.xls,.csv" />
+          </label>
+
+          <input
+            id="search"
+            type="search"
+            placeholder="Search name / email / interest..."
+          />
+        </div>
+
+        <div class="right">
+          <select id="filter-branch">
+            <option value="">All Branches</option>
+          </select>
+
+          <select id="filter-year">
+            <option value="">All Years</option>
+          </select>
+
+          <select id="filter-interest">
+            <option value="">All Interests</option>
+          </select>
+
+          <button id="export-csv">Export CSV</button>
+          <button id="send-email">Send Email (mailto)</button>
+        </div>
+      </section>
+
+      <section class="table-wrap">
+        <table id="students-table">
+          <thead>
+            <tr id="table-headers">
+              <!-- headers injected by JS -->
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- rows injected by JS -->
+          </tbody>
+        </table>
+      </section>
+
+      <section class="footer-note">
+        <small
+          >Tip: Select rows using checkboxes to send personalized emails or
+          export selected rows.</small
+        >
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
