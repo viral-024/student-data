@@ -1,3 +1,4 @@
+
 let rawData = [];
 let headers = [];
 
@@ -230,6 +231,8 @@ function sendEmailViaEmailJS() {
     return;
   }
 
+
+  // Send emails one-by-one
   selectedEmails.forEach((email) => {
     emailjs
       .send("service_q79vzij", "template_vy7usfj", {
@@ -253,3 +256,4 @@ function toggleSelectAll(e) {
     .querySelectorAll(".row-checkbox")
     .forEach((cb) => (cb.checked = checked));
 }
+
