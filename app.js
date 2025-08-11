@@ -230,10 +230,6 @@ function sendEmailViaEmailJS() {
     return;
   }
 
-  // Initialize EmailJS (replace with your real user/public key)
-  emailjs.init("ECd6WqdgS-YdP-66S");
-
-  // Send emails one-by-one
   selectedEmails.forEach((email) => {
     emailjs
       .send("service_q79vzij", "template_vy7usfj", {
